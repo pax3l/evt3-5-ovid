@@ -82,7 +82,7 @@
   "initNavBarOpened": true,
   "thumbnailsButton": true,
   "viscollButton": false,
-  "mainFontFamily": "'Libertinus Serif', Times, Junicode, serif"
+  "mainFontFamily": "'Libertinus Serif', Times, Junicode, serif",
   "mainFontSize": "1.1rem",
   "secondaryfontFamily": "Arial, sans-serif",
   "secondaryfontSize": "1.1em",

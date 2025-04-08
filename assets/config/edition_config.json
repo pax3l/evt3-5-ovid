@@ -6,8 +6,8 @@
     {
       "id": "diplomatic",
       "label": "diplomatic",
-      "enable": true,
-      "hidden": false
+      "enable": false,
+      "hidden": true
     },
     {
       "id": "interpretative",
@@ -24,7 +24,7 @@
     {
       "id": "changesView",
       "label": "changes",
-      "enable": true,
+      "enable": false,
       "hidden": true
     }
   ],
@@ -108,7 +108,7 @@
   ],
   "notSignificantVariants": ["type=orthographic"],
   "defaultEdition": "critical",
-  "defaultViewMode": "collation",
+  "defaultViewMode": "critical",
   "proseVersesToggler": true,
   "defaultTextFlow": "verse",
   "verseNumberPrinter": 5,

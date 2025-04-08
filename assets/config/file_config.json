@@ -7,7 +7,7 @@
     },
     "graphics": {
       "value": "url",
-      "enable": false
+      "enable": true
     }
   },
   "imagesFolderUrls": {
@@ -20,4 +20,3 @@
     "editorialConventions": "assets/config/editorial_conventions_config.json"
   }
 }
-

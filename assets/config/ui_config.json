@@ -33,14 +33,14 @@
       "iconSet": "evt",
       "id": "textText",
       "label": "Text Text",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "collation",
       "iconSet": "evt",
       "id": "collation",
       "label": "Collation",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "srcTxt",
@@ -78,15 +78,15 @@
       "enable": true
     }
   ],
-  "enableNavBar": true,
-  "initNavBarOpened": true,
-  "thumbnailsButton": true,
+  "enableNavBar": false,
+  "initNavBarOpened": false,
+  "thumbnailsButton": false,
   "viscollButton": false,
   "mainFontFamily": "'Libertinus Serif', Times, Junicode, serif",
   "mainFontSize": "1.1rem",
   "secondaryfontFamily": "Arial, sans-serif",
   "secondaryfontSize": "1.1em",
-  "theme": "modern",
+  "theme": "classic",
   "syncZonesHighlightButton": true,
   "defaultBibliographicStyle": "chicago",
   "allowedBibliographicStyles": {
@@ -159,4 +159,3 @@
     }
   }
 }
-

@@ -1,6 +1,6 @@
 {
-  "editionTitle": "Archestratus",
-  "badge": "test",
+  "editionTitle": "Les fragments d’Archestrate de Géla",
+  "badge": "",
   "editionHome": "",
   "availableEditionLevels": [
     {
@@ -12,7 +12,7 @@
     {
       "id": "interpretative",
       "label": "interpretative",
-      "enable": true,
+      "enable": false,
       "hidden": false
     },
     {
@@ -164,7 +164,7 @@
       "strato-5": "#100077"
     }
   },
-  "defaultImageZoomLevel": 0.8,
-  "maxImageZoomLevel": 2,
+  "defaultImageZoomLevel": 1,
+  "maxImageZoomLevel": 3,
   "multiPageEngineForCriticalEdition": false
 }

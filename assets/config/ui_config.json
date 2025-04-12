@@ -73,9 +73,14 @@
       "enable": true
     },
     {
+      "code": "fr",
+      "label": "languageFr",
+      "enable": true
+    },
+    {
       "code": "it",
       "label": "languageIt",
-      "enable": true
+      "enable": false
     }
   ],
   "enableNavBar": false,

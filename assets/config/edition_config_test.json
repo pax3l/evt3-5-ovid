@@ -110,7 +110,7 @@
     "defaultEdition": "critical",
     "defaultViewMode": "imageText",
     "proseVersesToggler": true,
-    "defaultTextFlow": "prose",
+    "defaultTextFlow": "verses",
     "verseNumberPrinter": 5,
     "readingColorLight": "rgb(208, 220, 255)",
     "readingColorDark": "rgb(101, 138, 255)",

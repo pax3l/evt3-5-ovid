@@ -15,8 +15,8 @@
     "double": "assets/data/images/double/"
   },
   "configurationUrls": {
-    "edition": "assets/config/edition_config.json",
-    "ui": "assets/config/ui_config.json",
+    "edition": "assets/config/edition_config_ovid.json",
+    "ui": "assets/config/ui_config_ovid.json",
     "editorialConventions": "assets/config/editorial_conventions_config.json"
   },
   "logoUrl": ""

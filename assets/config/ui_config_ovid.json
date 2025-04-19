@@ -26,7 +26,7 @@
       "iconSet": "evt",
       "id": "imageText",
       "label": "Image Text",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "txtTxt",
@@ -87,9 +87,9 @@
   "initNavBarOpened": false,
   "thumbnailsButton": false,
   "viscollButton": false,
-  "mainFontFamily": "'Libertinus Serif', Times, Junicode, serif",
+  "mainFontFamily": "Palatino, Libertinus Serif, Times, serif",
   "mainFontSize": "1.1rem",
-  "secondaryfontFamily": "Arial, sans-serif",
+  "secondaryfontFamily": "Junicode, sans-serif",
   "secondaryfontSize": "1.1em",
   "theme": "classic",
   "syncZonesHighlightButton": true,

@@ -1,13 +1,13 @@
 {
-  "editionTitle": "Les divinités dans les Métamorphoses d’Ovide",
-  "badge": "Apollon et Minerve",
+  "editionTitle": "Ovide | Métamorphoses ",
+  "badge": "Divinités",
   "editionHome": "",
   "availableEditionLevels": [
     {
       "id": "diplomatic",
       "label": "diplomatic",
-      "enable": false,
-      "hidden": true
+      "enable": true,
+      "hidden": false
     },
     {
       "id": "interpretative",
@@ -57,34 +57,34 @@
       "label": "Entités nommées",
       "items": [
         {
-          "value": "persName",
-          "label": "Divinités",
-          "color": "#ff4aff",
+          "value": "MIN",
+          "label": "Minerve",
+          "color": "#a5a58d",
           "enable": true
         },
         {
-          "value": "persName[ana='act']",
-          "label": "Acteur de métamorphose",
-          "color": "#6698ed",
+          "value": "APO",
+          "label": "Apollon",
+          "color": "#FFD700",
           "enable": true
         },
         {
-          "value": "persName[ana='auto']",
-          "label": "Acteur de sa propre métamorphose",
-          "color": "#f7a760",
-          "enable": true
+          "value": "JUP",
+          "label": "Jupiter",
+          "color": "#657db8",
+          "enable": false
         },
         {
-          "value": "persName[ana='obj']",
-          "label": "Objet de métamorphose",
-          "color": "#f7a760",
-          "enable": true
+          "value": "",
+          "label": "",
+          "color": "",
+          "enable": false
         },
         {
-          "value": "persName[ana='NA']",
-          "label": "Pas de lien avec une métamorphose ici",
-          "color": "#995079m",
-          "enable": true
+          "value": "",
+          "label": "",
+          "color": "",
+          "enable": false
         },
         {
           "value": "placeName,geogName",

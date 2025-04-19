@@ -1,5 +1,5 @@
 {
-    "editionUrls": ["assets/data/test_athenaeus_i_1-5.xml"],
+    "editionUrls": ["assets/data/deities_pallas_phebus.xml"],
     "editionImagesSource": {
         "manifest": {
             "value": "https://www.e-codices.unifr.ch/metadata/iiif/csg-0730/manifest.json",
@@ -15,8 +15,8 @@
         "double": "assets/data/images/double/"
     },
     "configurationUrls": {
-        "edition": "assets/config/edition_config.json",
-        "ui": "assets/config/ui_config.json",
+        "edition": "assets/config/edition_config_ovid.json",
+        "ui": "assets/config/ui_config_ovid.json",
         "editorialConventions": "assets/config/editorial_conventions_config.json"
     },
     "logoUrl": ""

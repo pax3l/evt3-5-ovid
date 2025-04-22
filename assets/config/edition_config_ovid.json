@@ -1,18 +1,40 @@
 {
-  "editionTitle": "Ovide | Métamorphoses ",
-  "badge": "Divinités",
+  "editionTitle": "Les Métamorphoses d'Ovide ",
+  "badge": "Rôle des divinités",
   "editionHome": "",
+  "customStyles": "assets/config/custom-styles.css",
+  "metadataView": {
+    "showFileDesc": true,
+    "showEncodingDesc": true,
+    "showProfileDesc": true,
+    "showRevisionDesc": true,
+    "propsToShow": [
+      "title",
+      "author",
+      "editor",
+      "sponsor",
+      "publisher",
+      "pubPlace",
+      "date",
+      "extent"
+    ],
+    "showAttrNames": false,
+    "showEmptyValues": false,
+    "inline": true,
+    "commaSeparated": true,
+    "showMainElemTextContent": true
+  },
   "availableEditionLevels": [
     {
-      "id": "diplomatic",
-      "label": "diplomatic",
+      "id": "interpretative",
+      "label": "Livres",
       "enable": true,
       "hidden": false
     },
     {
-      "id": "interpretative",
-      "label": "interpretative",
-      "enable": true,
+      "id": "lecture-?",
+      "label": "",
+      "enable": false,
       "hidden": false
     },
     {
@@ -36,28 +58,28 @@
     },
     "APO": {
       "defaultLabel": "Apollon",
-      "enable": false
+      "enable": true
     },
     "organizations": {
-      "defaultLabel": "Organizations",
+      "defaultLabel": "Jupiter",
       "enable": false
     },
     "relations": {
       "defaultLabel": "Relations",
-      "enable": true
+      "enable": false
     },
     "events": {
       "defaultLabel": "Events",
-      "enable": true
+      "enable": false
     }
   },
   "showLists": true,
   "entitiesSelectItems": [
     {
-      "label": "Entités nommées",
+      "label": "Divinités",
       "items": [
         {
-          "value": "MIN",
+          "value": "persName[ref=MIN]",
           "label": "Minerve",
           "color": "#a5a58d",
           "enable": true
@@ -125,7 +147,7 @@
     }
   ],
   "notSignificantVariants": ["type=orthographic"],
-  "defaultEdition": "diplomatic",
+  "defaultEdition": "interpretative",
   "defaultViewMode": "interpretative",
   "proseVersesToggler": true,
   "defaultTextFlow": "verses",
@@ -136,7 +158,11 @@
     "biblAttributeToMatch": "xml:id",
     "elementAttributesToMatch": ["target", "source"]
   },
-  "biblView": {
+  "bibliView": {
+    "showFileDesc": true,
+    "showEncodingDesc": true,
+    "showProfileDesc": true,
+    "showRevisionDesc": true,
     "propsToShow": [
       "author",
       "title",

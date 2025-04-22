@@ -162,16 +162,23 @@ div[id="ngb-nav-3-panel"] {
   padding-top: 0px;
 } */
 
-/* display of headings in dipl and interp */
-/* h1[data-tagname="head"] {
+/*display of headings in dipl and interp */
+h1[data-tagname="book"] {
   font-weight: bold;
   padding-bottom: 1.5em;
 }
 
-#text_frame h1[data-tagname="head"] {
+#text_frame h1[data-tagname="book"] {
   padding-top: 30px;
-} */
+}
+h3[data-tagname="milestone"] {
+  font-weight: bold;
+  padding-bottom: 1.5em;
+}
 
+#text_frame h3[data-tagname="milestone"] {
+  padding-top: 30px;
+}
 /* display of p containing sources */
 /* p[data-ana="source"] {
   padding-top: 1.5em;
@@ -184,10 +191,10 @@ div[id="ngb-nav-3-panel"] {
 } */
 
 /* display of specific tags */
-/* .option[data-value="name"][data-type="divin"] .filter_color {
-  color: yellow;
+.option[data-ref="MIN"] .filter_color {
+  color: #FFD700;
 }
-
+/*
 .doc.current span.name[data-type="divin"].list_active,
 .doc.current span.name[data-type="divin"].list_active span.trigger,
 .doc.current span.name[data-type="divin"].over > span.trigger,
@@ -346,4 +353,94 @@ span.interp-choice_popup_corr span.interp-corr {
     url("../fonts/LibertinusSerif-SemiboldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
+}
+/* Ajouts persos*/
+/* Distinguer les livres (ne marche pas)*/
+/* compteur global "book" */
+body {
+  counter-reset: book;
+}
+/* À chaque div textpart[subtype=book], on incrémente */
+div[type="textpart"][subtype="book"] {
+  counter-increment: book;
+  position: relative;            
+  padding-top: 1.5em;           
+}
+
+div[type="textpart"][subtype="book"]::before {
+  content: "Livre " counter(book, upper-roman) !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.5em; 
+}
+
+tei-milestone[unit="tale"]::before {
+  content: "—" attr(n) "—" !important;
+  display: block;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  margin: 2em 0 1em 0;
+  border-top: 2px dashed #888;
+  padding-top: 1em; 
+}
+
+/* Styles pour l'affichage des métadonnées */
+evt-metadata-view {
+  display: block;
+  padding: 20px;
+}
+
+evt-metadata-view .metadata-section {
+  margin-bottom: 20px;
+}
+
+evt-metadata-view .metadata-section h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+evt-metadata-view .metadata-item {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+evt-metadata-view .metadata-label {
+  font-weight: bold;
+  color: #666;
+  margin-right: 5px;
+}
+
+evt-metadata-view .metadata-value {
+  color: #333;
+}
+
+/* Suppression de la barre horizontale et du texte maintext */
+evt-text-view {
+    border-bottom: none !important;
+}
+
+evt-text-view::before {
+    content: none !important;
+}
+
+/* Styles pour les noms de divinités */
+persName[ref="MIN"] {
+  color: #a5a58d;
+  font-weight: bold;
+  background-color: rgba(165, 165, 141, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+persName[ref="APO"] {
+  color: #FFD700;
+  font-weight: bold;
+  background-color: rgba(255, 215, 0, 0.1);
+  padding: 2px 4px;
+  border-radius: 3px;
 }

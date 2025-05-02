@@ -428,6 +428,11 @@ evt-text-view::before {
     content: none !important;
 }
 
+/* Cacher complètement l'élément mainText */
+evt-text-view .mainText {
+    display: none !important;
+}
+
 /* Styles pour les noms de divinités */
 persName[ref="MIN"] {
   color: #a5a58d;
@@ -443,4 +448,9 @@ persName[ref="APO"] {
   background-color: rgba(255, 215, 0, 0.1);
   padding: 2px 4px;
   border-radius: 3px;
+}
+    /* Style pour le texte brut */
+    /* Cacher complètement l'élément mainText */
+evt-text-view .mainText {
+   display: none !important;
 }

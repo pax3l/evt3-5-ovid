@@ -1,0 +1,1322 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_corpus.rng" 
+schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_corpus.rng" 
+schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<teiHeader>
+		<fileDesc>
+			<titleStmt>
+				<title>Metamorphoses (Restreint livre II)</title>
+				<title type="sub">Machine readable text</title>
+				<author n="Ov.">P. Ovidius Naso</author>
+				<editor role="editor" n="Magnus">Hugo Magnus</editor>
+				<sponsor>Perseus Project, Tufts University</sponsor>
+				<principal>Gregory Crane</principal>
+				<respStmt>
+					<resp>Prepared under the supervision of</resp>
+					<name>Bridget Almas</name>
+					<name>Lisa Cerrato</name>
+					<name>William Merrill</name>
+					<name>David Smith</name>
+				</respStmt>
+				<funder n="org:NEH">The National Endowment for the Humanities</funder>
+			</titleStmt>
+			<extent>about 661Kb</extent>
+			<publicationStmt>
+				<publisher>Trustees of Tufts University</publisher>
+				<pubPlace>Medford, MA</pubPlace>
+				<authority>Perseus Project</authority>
+				<date type="release">1997-10-28</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<monogr>
+						<author>Ovid</author>
+						<title>Metamorphoses</title>
+						<editor role="editor">Hugo Magnus</editor>
+						<imprint>
+							<pubPlace>Gotha (Germany)</pubPlace>
+							<publisher>Friedr. Andr. Perthes</publisher>
+							<date cert="low">1892</date>
+						</imprint>
+					</monogr>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+
+
+		<encodingDesc>
+
+			<refsDecl n="CTS">
+				<cRefPattern n="line" matchPattern="(\w+).(\w+)"
+					replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div[@n='$1']/tei:l[@n='$2'])">
+					<p>This pointer pattern extracts book and line</p>
+				</cRefPattern>
+				<cRefPattern n="book" matchPattern="(\w+)"
+					replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div[@n='$1'])">
+					<p>This pointer pattern extracts book</p>
+				</cRefPattern>
+			</refsDecl>
+			<refsDecl>
+				<refState unit="book"/>
+				<refState unit="line"/>
+			</refsDecl>
+		</encodingDesc>
+
+		<profileDesc>
+			<langUsage>
+				<language ident="lat">Latin</language>
+			</langUsage>
+		</profileDesc>
+
+		<revisionDesc>
+			<change who="apenture" when="2024-08-12"> Added the element persName to encode the presence of deities in Book I to XV. Attributes descripted in the ODD document mentionned in TEI element.</change>
+			<change who="nrakofsky" when="2022-01-12">Added "ana = arg" tags for argumentative
+				speeches</change>
+			<change who="nrakofsky" when="2022-01-12">Added "sp who" and "ana" tags in Books XI to
+				XV</change>
+			<change who="nrakofsky" when="2021-09-09">Added "sp who" and "ana" tags which specify
+				which character is speaking and whether he is a narrator ("narr") or a character
+				("pers") of the story in Books I to X</change>
+			<change who="Lisa Cerrato" when="2017-03-21">Added notes to better indicate deleted
+				lines. Changed certainty of source edition date as there were inconsistencies with
+				1892.</change>
+			<change who="balmas01" when="2013-09-13T11:17:41">moving Greg's work-in-progress on
+				CTS-izing greco-roman collection texts to a Work directory</change>
+			<change who="gcrane" when="2013-06-08T12:13:38">TEI XML converted to facilitate CTS
+				compatibility</change>
+			<change who="lcerrato" when="2013-01-30T20:34:07">changed 7.114 impleverant to
+				impleverunt</change>
+			<change who="lcerrato" when="2011-10-31T19:48:11">fixed typo ven to veri 5.247</change>
+			<change who="lcerrato" when="2011-10-31T19:45:12">fixed typo siqnis to siquis</change>
+			<change who="lcerrato" when="2011-10-28T20:09:17">fixed quotes around 6.136-7</change>
+			<change who="gcrane" when="2011-01-16T15:23:49">base sdl file</change>
+			<change who="rsingh04" when="2009-12-07T18:50:34">moved more xml files around based on
+				copyright status</change>
+			<change who="packel" when="2005-08-01T16:20:13">removed stray item tags</change>
+			<change who="packel" when="2005-07-25T14:56:42">Converted to XML</change>
+			<change who="amahoney" when="2004-04-22T13:07:05">remove English headers</change>
+			<change who="mimno" when="2004-04-02T19:47:29">added line 1 cards</change>
+			<change who="yorkc" when="2003-07-01T22:17:18">Updated texts to TEI P4 and Perseus P4
+				extensions; minor cleanup (esp. character encodings and typos.)</change>
+			<change who="lcerrato" when="2003-05-21T20:25:41">changed tetum to letum 15.108:
+				confirmed by context and PHI</change>
+			<change who="lcerrato" when="2003-02-04T21:22:36">fixed typo 13.712 L in Ulixis was
+				captial I</change>
+			<change who="DAS" when="2000-03-04T20:34:52">Added separate funder entity to TEI
+				header.</change>
+			<change who="textgod" when="1999-08-12T17:26:46">Fixed typo.</change>
+			<change who="DAS" when="1999-08-04T22:38:41">Turn line milestones into cards.</change>
+			<change who="textgod" when="1998-10-15T21:50:58">Fixed lines so that milestones point to
+				the line after, not the line before.</change>
+			<change who="textgod" when="1997-09-26T22:58:58">Changed abbreviation and tweaked
+				header.</change>
+			<change who="wmerrill" when="1997-09-17T17:47:11">text chunks around 100 lines matched
+				with english</change>
+			<change who="textgod" when="1997-07-10T19:08:01">Normalized tale names.</change>
+			<change who="textgod" when="1997-07-08T19:19:40">Added to repository. Passes SGML
+				parse.</change>
+			<change who="KW" when="1997-07">text scaned by KW, diffed against PHI text of Goold's
+				text, corrected against Magnus 1892, questionable readings corrected against Magnus
+				1914 by KW and WM. Basic tagging by KW, massaged by WM July 1997. Chunks of text of
+				c 100 lines matched with English and indicated by xxx. WM 9/97.</change>
+			<change who="DAS" when="1997-08-07">.</change>
+		</revisionDesc>
+	</teiHeader>
+    <text>
+		<body>
+			<div type="edition" xml:lang="lat" n="urn:cts:latinLit:phi0959.phi006.perseus-lat2">
+                <div type="textpart" subtype="book" n="2">
+                    <milestone ed="More" n="Phaethon AND PHOEBUS" unit="tale"/>
+                    <sp who="Ovid" ana="narr">
+                        <l n="1">Regia <persName ref="APO" role="narrative" ana="NA">Solis</persName> erat sublimibus alta columnis,</l>
+                        <l n="2">clara micante auro flammasque imitante pyropo:</l>
+                        <l n="3">cuius ebur nitidum fastigia summa tegebat,</l>
+                        <l n="4">argenti bifores radiabant lumine valvae.</l>
+                        <l n="5">Materiam superabat opus: nam Mulciber illic</l>
+                        <l n="6">aequora caelarat medias cingentia terras,</l>
+                        <l n="7">terrarumque orbem, caelumque quod inminet orbi.</l>
+                        <l n="8">Caeruleos habet unda deos, Tritona canorum</l>
+                        <l n="9">Proteaque ambiguum, balaenarumque prementem</l>
+                        <l n="10">Aegaeona suis inmania terga lacertis,</l>
+                        <l n="11">Doridaque et natas, quarum pars nare videtur,</l>
+                        <l n="12">pars in mole sedens virides siccare capillos,</l>
+                        <l n="13">pisce vehi quaedam: facies non omnibus una,</l>
+                        <l n="14">non diversa tamen, qualem decet esse sororum.</l>
+                        <l n="15">Terra viros urbesque gerit silvasque ferasque</l>
+                        <l n="16">fluminaque et nymphas et cetera numina ruris.</l>
+                        <l n="17">Haec super imposita est caeli fulgentis imago</l>
+                        <l n="18">signaque sex foribus dextris totidemque sinistris.</l>
+                        <l n="19">Quo simul acclivi Clymeneia limite proles</l>
+                        <l n="20">venit et intravit dubitati tecta parentis,</l>
+                        <l n="21">protinus ad <persName ref="APO" role="narrative" ana="NA">patrios</persName> sua fert vestigia vultus</l>
+                        <l n="22">consistitque procul: neque enim propiora ferebat</l>
+                        <l n="23">lumina. Purpurea velatus veste sedebat</l>
+                        <l n="24">in solio <persName ref="APO" role="narrative" ana="NA">Phoebus</persName> claris lucente smaragdis.</l>
+                        <l n="25">A dextra laevaque Dies et Mensis et Annus</l>
+                        <l n="26">Saeculaque et positae spatiis aequalibus Horae</l>
+                        <l n="27">Verque novum stabat cinctum florente corona,</l>
+                        <l n="28">stabat nuda Aestas et spicea serta gerebat,</l>
+                        <l n="29">stabat et Autumnus, calcatis sordidus uvis,</l>
+                        <l n="30">et glacialis Hiems, canos hirsuta capillos.</l>
+                        <l n="31">Inde loco medius rerum novitate paventem</l>
+                        <l n="32"><persName ref="APO" role="narrative" ana="NA">Sol</persName> oculis iuvenem, quibus adspicit omnia, vidit</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="33">«quae»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="33">que</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="33">«viae tibi causa? quid hac»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="33">ait</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="33">«arce petisti,</l>
+                        <l n="34">progenies, Phaethon, haud infitianda <persName ref="APO" role="narrative" ana="NA">parenti</persName>?»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="35">Ille refert</l>
+                    </sp>
+                    <sp who="Phaethon" ana="pers">
+                        <l n="35">«o lux inmensi publica mundi,</l>
+                        <l n="36"><persName ref="APO" role="narrative" ana="NA">Phoebe pater</persName>, si das usum mihi nominis huius</l>
+                        <l n="37">nec falsa Clymene culpam sub imagine celat,</l>
+                        <l n="38">pignera da, <persName ref="APO" role="narrative" ana="NA">genitor</persName>, per quae tua vera propago</l>
+                        <l n="39">credar, et hunc animis errorem detrahe nostris.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="40">Dixerat: at genitor circum caput omne micantes</l>
+                        <l n="41">deposuit radios propiusque accedere iussit;</l>
+                        <l n="42">amplexuque dato</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="42">«nec tu meus esse negari</l>
+                        <l n="43">dignus es, et Clymene veros»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="43">ait</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="43">«edidit ortus.</l>
+                        <l n="44">Quoque minus dubites, quodvis pete munus, ut illud</l>
+                        <l n="45">me tribuente feras. Promissis testis adesto</l>
+                        <l n="46">dis iuranda palus, oculis incognita nostris.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="47">Vix bene desierat, currus rogat ille paternos</l>
+                        <l n="48">inque diem alipedum ius et moderamen equorum.</l>
+                        <l n="49">Paenituit iurasse <persName ref="APO" role="narrative" ana="NA">patrem</persName>. Qui terque quaterque</l>
+                        <l n="50">concutiens inlustre caput</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="50">«temeraria»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="50">dixit</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="51">«vox mea facta tua est. Utinam promissa liceret</l>
+                        <l n="52">non dare! confiteor, solum hoc tibi, nate, negarem.</l>
+                        <l n="53">Dissuadere licet. Non est tua tuta voluntas.</l>
+                        <l n="54">Magna petis, Phaethon, et quae nec viribus istis</l>
+                        <l n="55">munera conveniant nec tam puerilibus annis.</l>
+                        <l n="56">Sors tua mortalis, non est mortale quod optas.</l>
+                        <l n="57">Plus etiam, quam quod superis contingere possit,</l>
+                        <l n="58">nescius adfectas. Placeat sibi quisque licebit,</l>
+                        <l n="59">non tamen ignifero quisquam consistere in axe</l>
+                        <l n="60">me valet excepto. Vasti quoque rector Olympi,</l>
+                        <l n="61">qui fera terribili iaculatur fulmina dextra,</l>
+                        <l n="62">non agat hos currus: et quid Iove maius habemus?</l>
+                        <l n="63">Ardua prima via est et qua vix mane recentes</l>
+                        <l n="64">enitantur equi: medio est altissima caelo,</l>
+                        <l n="65">unde mare et terras ipsi mihi saepe videre</l>
+                        <l n="66">fit timor, et pavida trepidat formidine pectus.</l>
+                        <l n="67">Ultima prona via est et eget moderamine certo:</l>
+                        <l n="68">tunc etiam quae me subiectis excipit undis,</l>
+                        <l n="69">ne ferar in praeceps, Tethys solet ipsa vereri.</l>
+                        <l n="70">Adde quod adsidua rapitur vertigine caelum</l>
+                        <l n="71">sideraque alta trahit celerique volumine torquet.</l>
+                        <l n="72">Nitor in adversum, nec me, qui cetera, vincit</l>
+                        <l n="73">impetus, et rapido contrarius evehor orbi.</l>
+                        <l n="74">Finge datos currus: quid ages? poterisne rotatis</l>
+                        <l n="75">obvius ire polis, ne te citus auferat axis?</l>
+                        <l n="76">Forsitan et lucos illic urbesque deorum</l>
+                        <l n="77">concipias animo delubraque ditia donis</l>
+                        <l n="78">esse? per insidias iter est formasque ferarum.</l>
+                        <l n="79">Utque viam teneas nulloque errore traharis,</l>
+                        <l n="80">per tamen adversi gradieris cornua tauri</l>
+                        <l n="81">Haemoniosque arcus violentique ora leonis</l>
+                        <l n="82">saevaque circuitu curvantem bracchia longo</l>
+                        <l n="83">scorpion atque aliter curvantem bracchia cancrum.</l>
+                        <l n="84">Nec tibi quadrupedes animosos ignibus illis,</l>
+                        <l n="85">quos in pectore habent, quos ore et naribus efflant,</l>
+                        <l n="86">in promptu regere est: vix me patiuntur, ubi acres</l>
+                        <l n="87">incaluere animi, cervixque repugnat habenis.</l>
+                        <l n="88">At tu, funesti ne sim tibi muneris auctor,</l>
+                        <l n="89">nate, cave, dum resque sinit, tua corrige vota.</l>
+                        <l n="90">Scilicet ut nostro genitum te sanguine credas,</l>
+                        <l n="91">pignera certa petis? do pignera certa timendo</l>
+                        <l n="92">et patrio <persName ref="APO" role="narrative" ana="NA">pater</persName> esse metu probor. Adspice vultus</l>
+                        <l n="93">ecce meos; utinamque oculos in pectora posses</l>
+                        <l n="94">inserere et patrias intus deprendere curas!</l>
+                        <l n="95">Denique quidquid habet dives, circumspice, mundus,</l>
+                        <l n="96">eque tot ac tantis caeli terraeque marisque</l>
+                        <l n="97">posce bonis aliquid: nullam patiere repulsam.</l>
+                        <l n="98">Deprecor hoc unum, quod vero nomine poena,</l>
+                        <l n="99">non honor est: poenam, Phaethon, pro munere poscis.</l>
+                        <l n="100">Quid mea colla tenes blandis, ignare, lacertis?</l>
+                        <l n="101">ne dubita, dabitur (Stygias iuravimus undas)</l>
+                        <l n="102">quodcumque optaris: sed tu sapientius opta.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="103">Finierat monitus: dictis tamen ille repugnat</l>
+                        <l n="104">propositumque premit flagratque cupidine currus.</l>
+                        <l n="105">Ergo qua licuit genitor cunctatus ad altos</l>
+                        <l n="106">deducit iuvenem, Vulcania munera, currus.</l>
+                        <l n="107">Aureus axis erat, temo aureus, aurea summae</l>
+                        <l n="108">curvatura rotae, radiorum argenteus ordo;</l>
+                        <l n="109">per iuga chrysolithi positaeque ex ordine gemmae</l>
+                        <l n="110">clara repercusso reddebant lumina <persName ref="APO" role="narrative" ana="NA">Phoebo</persName>.</l>
+                        <l n="111">Dumque ea magnanimus Phaethon miratur opusque</l>
+                        <l n="112">perspicit, ecce vigil nitido patefecit ab ortu</l>
+                        <l n="113">purpureas Aurora fores et plena rosarum</l>
+                        <l n="114">atria. Diffugiunt stellae, quarum agmina cogit</l>
+                        <l n="115">Lucifer et caeli statione novissimus exit.</l>
+                        <l n="116">Quem petere ut terras mundumque rubescere vidit</l>
+                        <l n="117">cornuaque extremae velut evanescere lunae,</l>
+                        <l n="118">iungere equos Titan velocibus imperat Horis.</l>
+                        <l n="119">Iussa deae celeres peragunt, ignemque vomentes,</l>
+                        <l n="120">ambrosiae suco saturos, praesepibus altis</l>
+                        <l n="121">quadrupedes ducunt adduntque sonantia frena.</l>
+                        <l n="122">Tum <persName ref="APO" role="narrative" ana="NA">pater</persName> ora sui sacro medicamine nati</l>
+                        <l n="123">contigit et rapidae fecit patientia flammae</l>
+                        <l n="124">imposuitque comae radios, praesagaque luctus</l>
+                        <l n="125">pectore sollicito repetens suspiria dixit:</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="126">«Si potes his saltem monitis parere <persName ref="APO" role="narrative" ana="NA">parentis</persName>,</l>
+                        <l n="127">parce, puer, stimulis et fortius utere loris:</l>
+                        <l n="128">sponte sua properant; labor est inhibere volentes.</l>
+                        <l n="129">Nec tibi directos placeat via quinque per arcus:</l>
+                        <l n="130">sectus in obliquum est lato curvamine limes,</l>
+                        <l n="131">zonarumque trium contentus fine polumque</l>
+                        <l n="132">effugit australem iunctamque aquilonibus arcton.</l>
+                        <l n="133">Hac sit iter: manifesta rotae vestigia cernes.</l>
+                        <l n="134">Utque ferant aequos et caelum et terra calores,</l>
+                        <l n="135">nec preme nec summum molire per aethera currum.</l>
+                        <l n="136">Altius egressus caelestia tecta cremabis,</l>
+                        <l n="137">inferius terras: medio tutissimus ibis.</l>
+                        <l n="138">Neu te dexterior tortum declinet ad anguem,</l>
+                        <l n="139">neve sinisterior pressam rota ducat ad aram:</l>
+                        <l n="140">inter utrumque tene. Fortunae cetera mando,</l>
+                        <l n="141">quae iuvet et melius quam tu tibi, consulat opto.</l>
+                        <l n="142">Dum loquor, Hesperio positas in litore metas</l>
+                        <l n="143">umida nox tetigit. Non est mora libera nobis:</l>
+                        <l n="144">poscimur: effulget tenebris aurora fugatis.</l>
+                        <l n="145">Corripe lora manu, vel, si mutabile pectus</l>
+                        <l n="146">est tibi, consiliis, non curribus utere nostris,</l>
+                        <l n="147">dum potes et solidis etiamnunc sedibus adstas</l>
+                        <l n="148">dumque male optatos nondum premis inscius axes.</l>
+                        <l n="149">Quae tutus spectes, sine me dare lumina terris!»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="150">Occupat ille levem iuvenali corpore currum,</l>
+                        <l n="151">statque super manibusque datas contingere habenas</l>
+                        <l n="152">gaudet et invito grates agit inde <persName ref="APO" role="narrative" ana="NA">parenti</persName>.</l>
+                        <l n="153">Interea volucres Pyrois et Eous et Aethon,</l>
+                        <l n="154"><persName ref="APO" role="narrative" ana="NA">Solis</persName> equi, quartusque Phlegon, hinnitibus auras</l>
+                        <l n="155">flammiferis implent pedibusque repagula pulsant.</l>
+                        <l n="156">Quae postquam Tethys, fatorum ignara nepotis</l>
+                        <l n="157">reppulit, et facta est inmensi copia caeli,</l>
+                        <l n="158">corripuere viam pedibusque per aera motis</l>
+                        <l n="159">obstantes scindunt nebulas pennisque levati</l>
+                        <l n="160">praetereunt ortos isdem de partibus Euros.</l>
+                        <l n="161">Sed leve pondus erat, nec quod cognoscere possent</l>
+                        <l n="162"><persName ref="APO" role="narrative" ana="NA">Solis</persName> equi, solitaque iugum gravitate carebat;</l>
+                        <l n="163">utque labant curvae iusto sine pondere naves</l>
+                        <l n="164">perque mare instabiles nimia levitate feruntur,</l>
+                        <l n="165">sic onere adsueto vacuus dat in aera saltus</l>
+                        <l n="166">succutiturque alte similisque est currus inani.</l>
+                        <l n="167">Quod simulac sensere, ruunt tritumque relinquunt</l>
+                        <l n="168">quadriiugi spatium, nec quo prius ordine currunt.</l>
+                        <l n="169">Ipse pavet nec qua commissas flectat habenas,</l>
+                        <l n="170">nec scit, qua sit iter; nec, si sciat, imperet illis.</l>
+                        <l n="171">Tum primum radiis gelidi caluere triones</l>
+                        <l n="172">et vetito frustra temptarunt aequore tingi,</l>
+                        <l n="173">quaeque polo posita est glaciali proxima serpens,</l>
+                        <l n="174">frigore pigra prius nec formidabilis ulli,</l>
+                        <l n="175">incaluit sumpsitque novas fervoribus iras.</l>
+                        <l n="176">Te quoque turbatum memorant fugisse, Boote,</l>
+                        <l n="177">quamvis tardus eras et te tua plaustra tenebant.</l>
+                        <l n="178">Ut vero summo despexit ab aethere terras</l>
+                        <l n="179">infelix Phaethon penitus penitusque iacentes,</l>
+                        <l n="180">palluit et subito genua intremuere timore,</l>
+                        <l n="181">suntque oculis tenebrae per tantum lumen obortae.</l>
+                        <l n="182">Et iam mallet equos numquam tetigisse <persName ref="APO" role="metamorphosis" ana="NA">paternos</persName>,</l>
+                        <l n="183">iam cognosse genus piget et valuisse rogando,</l>
+                        <l n="184">iam Meropis dici cupiens ita fertur, ut acta</l>
+                        <l n="185">praecipiti pinus borea, cui victa remisit</l>
+                        <l n="186">frena suus rector, quam dis votisque reliquit.</l>
+                        <l n="187">Quid faciat? multum caeli post terga relictum,</l>
+                        <l n="188">ante oculos plus est! animo metitur utrumque,</l>
+                        <l n="189">et modo quos illi fatum contingere non est,</l>
+                        <l n="190">prospicit occasus, interdum respicit ortus:</l>
+                        <l n="191">quidque agat ignarus stupet et nec frena remittit</l>
+                        <l n="192">nec retinere valet nec nomina novit equorum.</l>
+                        <l n="193">Sparsa quoque in vario passim miracula caelo</l>
+                        <l n="194">vastarumque videt trepidus simulacra ferarum.</l>
+                        <l n="195">Est locus, in geminos ubi bracchia concavat arcus</l>
+                        <l n="196">scorpius et cauda flexisque utrimque lacertis</l>
+                        <l n="197">porrigit in spatium signorum membra duorum.</l>
+                        <l n="198">Hunc puer ut nigri madidum sudore veneni</l>
+                        <l n="199">vulnera curvata minitantem cuspide vidit,</l>
+                        <l n="200">mentis inops gelida formidine lora remisit.</l>
+                        <l n="201">Quae postquam summum tetigere iacentia tergum,</l>
+                        <l n="202">exspatiantur equi, nulloque inhibente per auras</l>
+                        <l n="203">ignotae regionis eunt, quaque impetus egit,</l>
+                        <l n="204">hac sine lege ruunt altoque sub aethere fixis</l>
+                        <l n="205">incursant stellis rapiuntque per avia currum.</l>
+                        <l n="206">Et modo summa petunt, modo per declive viasque</l>
+                        <l n="207">praecipites spatio terrae propiore feruntur.</l>
+                        <l n="208">Inferiusque suis fraternos currere Luna</l>
+                        <l n="209">admiratur equos, ambustaque nubila fumant;</l>
+                        <l n="210">corripitur flammis ut quaeque altissima, tellus</l>
+                        <l n="211">fissaque agit rimas et sucis aret ademptis.</l>
+                        <l n="212">Pabula canescunt, cum frondibus uritur arbor,</l>
+                        <l n="213">materiamque suo praebet seges arida damno.</l>
+                        <l n="214">Parva queror: magnae pereunt cum moenibus urbes,</l>
+                        <l n="215">cumque suis totas populis incendia gentes</l>
+                        <l n="216">in cinerem vertunt. Silvae cum montibus ardent,</l>
+                        <l n="217">ardet Athos Taurusque Cilix et Tmolus et Oete</l>
+                        <l n="218">et tum sicca, prius creberrima fontibus, Ide,</l>
+                        <l n="219">virgineusque Helicon et nondum Oeagrius Haemus;</l>
+                        <l n="220">ardet in inmensum geminatis ignibus Aetna</l>
+                        <l n="221">Parnasusque biceps et Eryx et Cynthus et Othrys,</l>
+                        <l n="222">et tandem nivibus Rhodope caritura, Mimasque</l>
+                        <l n="223">Dindymaque et Mycale natusque ad sacra Cithaeron.</l>
+                        <l n="224">Nec prosunt Scythiae sua frigora: Caucasus ardet</l>
+                        <l n="225">Ossaque cum Pindo maiorque ambobus Olympus</l>
+                        <l n="226">aeriaeque Alpes et nubifer Appenninus.</l>
+                        <l n="227">Tum vero Phaethon cunctis e partibus orbem</l>
+                        <l n="228">adspicit accensum nec tantos sustinet aestus,</l>
+                        <l n="229">ferventesque auras velut e fornace profunda</l>
+                        <l n="230">ore trahit currusque suos candescere sentit;</l>
+                        <l n="231">et neque iam cineres eiectatamque favillam</l>
+                        <l n="232">ferre potest calidoque involvitur undique fumo,</l>
+                        <l n="233">quoque eat, aut ubi sit, picea caligine tectus</l>
+                        <l n="234">nescit et arbitrio volucrum raptatur equorum.</l>
+                        <l n="235">Sanguine tum credunt in corpora summa vocato</l>
+                        <l n="236">Aethiopum populos nigrum traxisse colorem.</l>
+                        <l n="237">Tum facta est Libye raptis umoribus aestu</l>
+                        <l n="238">arida, tum nymphae passis fontesque lacusque</l>
+                        <l n="239">deflevere comis: quaerit Boeotia Dircen,</l>
+                        <l n="240">Argos Amymonen, Ephyre Pirenidas undas.</l>
+                        <l n="241">Nec sortita loco distantes flumina ripas</l>
+                        <l n="242">tuta manent: mediis Tanais fumavit in undis</l>
+                        <l n="243">Peneusque senex Teuthranteusque Caicus</l>
+                        <l n="244">et celer Ismenos cum Phegiaco Erymantho</l>
+                        <l n="245">arsurusque iterum Xanthus flavusque Lycormas,</l>
+                        <l n="246">quique recurvatis ludit Maeandrus in undis.</l>
+                        <l n="247">Mygdoniusque Melas et Taenarius Eurotas.</l>
+                        <l n="248">Arsit et Euphrates Babylonius, arsit Orontes</l>
+                        <l n="249">Thermodonque citus Gangesque et Phasis et Hister.</l>
+                        <l n="250">Aestuat Alpheus, ripae Spercheides ardent,</l>
+                        <l n="251">quodque suo Tagus amne vehit, fluit ignibus aurum,</l>
+                        <l n="252">et quae Maeonias celebrabant carmine ripas</l>
+                        <l n="253">flumineae volucres, medio caluere Caystro.</l>
+                        <l n="254">Nilus in extremum fugit perterritus orbem</l>
+                        <l n="255">occuluitque caput, quod adhuc latet: ostia septem</l>
+                        <l n="256">pulverulenta vacant, septem sine flumine valles.</l>
+                        <l n="257">Fors eadem Ismarios Hebrum cum Strymone siccat</l>
+                        <l n="258">Hesperiosque amnes Rhenum Rhodanumque Padumque,</l>
+                        <l n="259">cuique fuit rerum promissa potentia, Thybrin.</l>
+                        <l n="260">Dissilit omne solum, penetratque in Tartara rimis</l>
+                        <l n="261">lumen et infernum terret cum coniuge regem.</l>
+                        <l n="262">Et mare contrahitur, siccaeque est campus harenae</l>
+                        <l n="263">quod modo pontus erat: quosque altum texerat aequor,</l>
+                        <l n="264">exsistunt montes et sparsas Cycladas augent.</l>
+                        <l n="265">Ima petunt pisces, nec se super aequora curvi</l>
+                        <l n="266">tollere consuetas audent delphines in auras;</l>
+                        <l n="267">corpora phocarum summo resupina profundo</l>
+                        <l n="268">exanimata natant. Ipsum quoque Nerea fama est</l>
+                        <l n="269">Doridaque et natas tepidis latuisse sub antris.</l>
+                        <l n="270">Ter Neptunus aquis cum torvo bracchia vultu</l>
+                        <l n="271">exserere ausus erat, ter non tulit aeris ignes.</l>
+                        <l n="272">Alma tamen Tellus, ut erat circumdata ponto,</l>
+                        <l n="273">inter aquas pelagi contractosque undique fontes,</l>
+                        <l n="274">qui se condiderant in opacae viscera matris,</l>
+                        <l n="275">sustulit oppressos collo tenus arida vultus</l>
+                        <l n="276">opposuitque manum fronti magnoque tremore</l>
+                        <l n="277">omnia concutiens paulum subsedit et infra</l>
+                        <l n="278">quam solet esse fuit, siccaque ita voce locuta est:</l>
+                    </sp>
+                    <sp who="Tellus" ana="pers">
+                        <l n="279">«Si placet hoc, meruique, quid o tua fulmina cessant,</l>
+                        <l n="280">summe deum? liceat periturae viribus ignis</l>
+                        <l n="281">igne perire tuo clademque auctore levare.</l>
+                        <l n="282">Vix equidem fauces haec ipsa in verba resolvo»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="283">(presserat ora vapor):</l>
+                    </sp>
+                    <sp who="Tellus" ana="pers">
+                        <l n="283">«tostos en adspice crines</l>
+                        <l n="284">inque oculis tantum, tantum super ora favillae.</l>
+                        <l n="285">Hosne mihi fructus, hunc fertilitatis honorem</l>
+                        <l n="286">officiique refers, quod adunci vulnera aratri</l>
+                        <l n="287">rastrorumque fero totoque exerceor anno,</l>
+                        <l n="288">quod pecori frondes, alimentaque mitia, fruges,</l>
+                        <l n="289">humano generi, vobis quoque tura ministro?</l>
+                        <l n="290">Sed tamen exitium fac me meruisse: quid undae,</l>
+                        <l n="291">quid meruit frater? cur illi tradita sorte</l>
+                        <l n="292">aequora decrescunt et ab aethere longius absunt?</l>
+                        <l n="293">Quodsi nec fratris nec te mea gratia tangit,</l>
+                        <l n="294">at caeli miserere tui. Circumspice utrumque,</l>
+                        <l n="295">fumat uterque polus. Quos si vitiaverit ignis,</l>
+                        <l n="296">atria vestra ruent. Atlas en ipse laborat</l>
+                        <l n="297">vixque suis umeris candentem sustinet axem.</l>
+                        <l n="298">Si freta, si terrae pereunt, si regia caeli,</l>
+                        <l n="299">in chaos antiquum confundimur. Eripe flammis,</l>
+                        <l n="300">siquid adhuc superest, et rerum consule summae.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="301">Dixerat haec Tellus: neque enim tolerare vaporem</l>
+                        <l n="302">ulterius potuit nec dicere plura: suumque</l>
+                        <l n="303">rettulit os in se propioraque manibus antra.</l>
+                        <l n="304">At pater omnipotens, superos testatus et ipsum,</l>
+                        <l n="305">qui dederat currus, nisi opem ferat, omnia fato</l>
+                        <l n="306">interitura gravi, summam petit arduus arcem,</l>
+                        <l n="307">unde solet nubes latis inducere terris,</l>
+                        <l n="308">unde movet tonitrus vibrataque fulmina iactat.</l>
+                        <l n="309">Sed neque quas posset terris inducere nubes</l>
+                        <l n="310">tunc habuit, nec quos caelo demitteret imbres.</l>
+                        <l n="311">Intonat et dextra libratum fulmen ab aure</l>
+                        <l n="312">misit in aurigam pariterque animaque rotisque</l>
+                        <l n="313">expulit et saevis compescuit ignibus ignes.</l>
+                        <l n="314">Consternantur equi et saltu in contraria facto</l>
+                        <l n="315">colla iugo eripiunt abruptaque lora relinquunt.</l>
+                        <l n="316">Illic frena iacent, illic temone revulsus</l>
+                        <l n="317">axis, in hac radii fractarum parte rotarum,</l>
+                        <l n="318">sparsaque sunt late laceri vestigia currus.</l>
+                        <l n="319">At Phaethon rutilos flamma populante capillos,</l>
+                        <l n="320">volvitur in praeceps longoque per aera tractu</l>
+                        <l n="321">fertur, ut interdum de caelo stella sereno</l>
+                        <l n="322">etsi non cecidit, potuit cecidisse videri.</l>
+                        <l n="323">Quem procul a patria diverso maximus orbe</l>
+                        <l n="324">excipit Eridanus fumantiaque abluit ora.</l>
+                        <l n="325">Naides Hesperiae trifida fumantia flamma</l>
+                        <l n="326">corpora dant tumulo, signant quoque carmine saxum:</l>
+                        <l n="327">HIC SITUS EST PHAETHON, CURRUS AURIGA <persName ref="APO" role="narrative" ana="NA">PATERNI</persName>:</l>
+                        <l n="328">QUEM SI NON TENUIT, MAGNIS TAMEN EXCIDIT AUSIS.</l>
+                        <l n="329">Nam <persName ref="APO" role="narrative" ana="NA">pater</persName> obductos, luctu miserabilis aegro</l>
+                        <l n="330">condiderat vultus: et, si modo credimus, unum</l>
+                        <l n="331">isse diem sine sole ferunt: incendia lumen</l>
+                        <l n="332">praebebant aliquisque malo fuit usus in illo.</l>
+                        <l n="333">At Clymene postquam dixit quaecumque fuerunt</l>
+                        <l n="334">in tantis dicenda malis, lugubris et amens</l>
+                        <l n="335">et laniata sinus totum percensuit orbem,</l>
+                        <l n="336">exanimesque artus primo, mox ossa requirens</l>
+                        <l n="337">repperit (ossa tamen peregrina condita ripa!),</l>
+                        <l n="338">incubuitque loco nomenque in marmore lectum</l>
+                        <l n="339">perfudit lacrimis et aperto pectore fovit.</l>
+                        <l n="340">Nec minus Heliades lugent et inania morti</l>
+                        <l n="341">munera dant lacrimas, et caesae pectora palmis</l>
+                        <l n="342">non auditurum miseras Phaethonta querellas</l>
+                        <l n="343">nocte dieque vocant adsternunturque sepulcro.</l>
+                        <l n="344">Luna quater iunctis implerat cornibus orbem:</l>
+                        <l n="345">illae more suo (nam morem fecerat usus)</l>
+                        <l n="346">plangorem dederant. E quis Phaethusa, sororum</l>
+                        <l n="347">maxima, cum vellet terra procumbere, questa est</l>
+                        <l n="348">deriguisse pedes. Ad quam conata venire</l>
+                        <l n="349">candida Lampetie subita radice retenta est.</l>
+                        <l n="350">Tertia cum crinem manibus laniare pararet,</l>
+                        <l n="351">avellit frondes; haec stipite crura teneri,</l>
+                        <l n="352">illa dolet fieri longos sua bracchia ramos.</l>
+                        <l n="353">Dumque ea mirantur, complectitur inguina cortex,</l>
+                        <l n="354">perque gradus uterum pectusque umerosque manusque</l>
+                        <l n="355">ambit et exstabant tantum ora vocantia matrem.</l>
+                        <l n="356">Quid faciat mater, nisi, quo trahat impetus illam,</l>
+                        <l n="357">huc eat atque illuc, et, dum licet, oscula iungat?</l>
+                        <l n="358">Non satis est; truncis avellere corpora temptat,</l>
+                        <l n="359">et teneros manibus ramos abrumpit; at inde</l>
+                        <l n="360">sanguineae manant, tamquam de vulnere, guttae.</l>
+                    </sp>
+                    <sp who="Heliades" ana="pers">
+                        <l n="361">«Parce, precor, mater»,</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="361"> quaecumque est saucia, clamat,</l>
+                    </sp>
+                    <sp who="Heliades" ana="pers">
+                        <l n="362">«parce, precor: nostrum laceratur in arbore corpus.</l>
+                        <l n="363">iamque vale»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="363">—cortex in verba novissima venit.</l>
+                        <l n="364">Inde fluunt lacrimae, stillataque sole rigescunt</l>
+                        <l n="365">de ramis electra novis, quae lucidus amnis</l>
+                        <l n="366">excipit et nuribus mittit gestanda Latinis.</l>
+                        <l n="367">Adfuit huic monstro proles Stheneleia Cycnus,</l>
+                        <l n="368">qui tibi materno quamvis a sanguine iunctus,</l>
+                        <l n="369">mente tamen, Phaethon, propior fuit. Ille relicto</l>
+                        <l n="370">(nam Ligurum populos et magnas rexerat urbes)</l>
+                        <l n="371">imperio ripas virides amnemque querellis</l>
+                        <l n="372">Eridanum implerat silvamque sororibus auctam,</l>
+                        <l n="373">cum vox est tenuata viro, canaeque capillos</l>
+                        <l n="374">dissimulant plumae, collumque a pectore longe</l>
+                        <l n="375">porrigitur, digitosque ligat iunctura rubentes,</l>
+                        <l n="376">penna latus velat, tenet os sine acumine rostrum.</l>
+                        <l n="377">Fit nova Cycnus avis, nec se caeloque Iovique</l>
+                        <l n="378">credit, ut iniuste missi memor ignis ab illo:</l>
+                        <l n="379">stagna petit patulosque lacus, ignemque perosus</l>
+                        <l n="380">quae colat elegit contraria flumina flammis.</l>
+                        <l n="381">Squalidus interea <persName ref="APO" role="narrative" ana="NA">genitor Phaethontis</persName> et expers</l>
+                        <l n="382">ipse sui decoris, qualis, cum deficit orbem,</l>
+                        <l n="383">esse solet, lucemque odit seque ipse diemque,</l>
+                        <l n="384">datque animum in luctus; et luctibus adicit iram</l>
+                        <l n="385">officiumque negat mundo.</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="385">«Satis»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="385">inquit</l>
+                    </sp>
+                    <sp who="Phoebus" ana="pers">
+                        <l n="385">«ab aevi</l>
+                        <l n="386">sors mea principiis fuit inrequieta, pigetque</l>
+                        <l n="387">actorum sine fine mihi, sine honore, laborum.</l>
+                        <l n="388">Quilibet alter agat portantes lumina currus!</l>
+                        <l n="389">Si nemo est omnesque dei non posse fatentur,</l>
+                        <l n="390">ipse agat ut saltem, dum nostras temptat habenas,</l>
+                        <l n="391">orbatura patres aliquando fulmina ponat.</l>
+                        <l n="392">Tum sciet, ignipedum vires expertus equorum,</l>
+                        <l n="393">non meruisse necem, qui non bene rexerit illos.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="394">Talia dicentem circumstant omnia <persName ref="APO" role="narrative" ana="NA">Solem</persName></l>
+                        <l n="395">numina, neve velit tenebras inducere rebus,</l>
+                        <l n="396">supplice voce rogant: missos quoque Iuppiter ignes</l>
+                        <l n="397">excusat precibusque minas regaliter addit.</l>
+                        <l n="398">Conligit amentes et adhuc terrore paventes</l>
+                        <l n="399"><persName ref="APO" role="narrative" ana="NA">Phoebus</persName> equos stimuloque dolens et verbere saevit:</l>
+                        <l n="400">saevit enim, natumque obiectat et imputat illis.</l>
+                        <milestone ed="Magnus" n="Callisto." unit="tale"/>
+                        <l n="401"> At pater omnipotens ingentia moenia caeli</l>
+                        <l n="402">circuit et ne quid labefactum viribus ignis</l>
+                        <l n="403">corruat explorat. Quae postquam firma suique</l>
+                        <l n="404">roboris esse videt terras hominumque labores</l>
+                        <l n="405">perspicit. Arcadiae tamen est impensior illi</l>
+                        <l n="406">cura suae: fontes et nondum audentia labi</l>
+                        <l n="407">flumina restituit dat terrae gramina, frondes</l>
+                        <l n="408">arboribus, laesasque iubet revirescere silvas.</l>
+                        <l n="409">Dum redit itque frequens, In virgine Nonacrina</l>
+                        <l n="410">haesit et accepti caluere sub ossibus ignes.</l>
+                        <l n="411">Non erat huius opus lanam mollire trahendo</l>
+                        <l n="412">nec positu variare comas; ubi fibula vestem,</l>
+                        <l n="413">vitta coercuerat neglectos alba capillos,</l>
+                        <l n="414">et modo leve manu iaculum, modo sumpserat arcum,</l>
+                        <l n="415">miles erat Phoebes: nec Maenalon attigit ulla</l>
+                        <l n="416">gratior hac Triviae. Sed nulla potentia longa est.</l>
+                        <l n="417">Ulterius medio spatium sol altus habebat,</l>
+                        <l n="418">cum subit illa nemus, quod nulla ceciderat aetas.</l>
+                        <l n="419">Exuit hic umero pharetram lentosque retendit</l>
+                        <l n="420">arcus, inque solo, quod texerat herba, iacebat</l>
+                        <l n="421">et pictam posita pharetram cervice premebat.</l>
+                        <l n="422">Iuppiter ut vidit fessam et custode vacantem,</l>
+                    </sp>
+                    <sp who="Iuppiter" ana="pers">
+                        <l n="423">«hoc certe furtum coniunx mea nesciet»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="423">inquit,</l>
+                    </sp>
+                    <sp who="Iuppiter" ana="pers">
+                        <l n="424">«aut si rescierit sunt o sunt iurgia tanti.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="425">Protinus induitur faciem cultumque Dianae</l>
+                        <l n="426">atque ait:</l>
+                    </sp>
+                    <sp who="Iuppiter" ana="pers">
+                        <l n="426">«O comitum, virgo, pars una mearum,</l>
+                        <l n="427">in quibus es venata iugis?»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="427"> De caespite virgo</l>
+                        <l n="428">se levat et</l>
+                    </sp>
+                    <sp who="Callisto" ana="pers">
+                        <l n="428">«salve numen, me indice»,</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="428"> dixit</l>
+                    </sp>
+                    <sp who="Callisto" ana="pers">
+                        <l n="429">«audiat ipse licet maius Iove.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="429"> Ridet et audit,</l>
+                        <l n="430">et sibi praeferri se gaudet et oscula iungit</l>
+                        <l n="431">nec moderata satis nec sic a virgine danda.</l>
+                        <l n="432">Qua venata foret silva, narrare parantem</l>
+                        <l n="433">impedit amplexu, nec se sine crimine prodit.</l>
+                        <l n="434">Illa quidem contra, quantum modo femina possit</l>
+                        <l n="435">(adspiceres utinam, Saturnia: mitior esses !),</l>
+                        <l n="436">illa quidem pugnat: sed quem superare puella,</l>
+                        <l n="437">quisve Iovem poterat? — Superum petit aethera victor</l>
+                        <l n="438">Iuppiter: huic odio nemus est et conscia silva.</l>
+                        <l n="439">Unde pedem referens paene est oblita pharetram</l>
+                        <l n="440">tollere cum telis et quem suspenderat arcum.</l>
+                        <l n="441">Ecce, suo comitata choro Dictynna per altum</l>
+                        <l n="442">Maenalon ingrediens et caede superba ferarum</l>
+                        <l n="443">adspicit hanc visamque vocat: clamata refugit,</l>
+                        <l n="444">et timuit primo, ne Iuppiter esset in illa.</l>
+                        <l n="445">Sed postquam pariter nymphas incedere vidit,</l>
+                        <l n="446">sensit abesse dolos numerumque accessit ad harum.</l>
+                        <l n="447">Heu quam difficile est crimen non prodere vultu!</l>
+                        <l n="448">Vix oculos attollit humo, nec, ut ante solebat,</l>
+                        <l n="449">iuncta deae lateri, nec toto est agmine prima,</l>
+                        <l n="450">sed silet et laesi dat signa rubore pudoris;</l>
+                        <l n="451">et nisi quod virgo est poterat sentire Diana</l>
+                        <l n="452">mille notis culpam; nymphae sensisse feruntur.</l>
+                        <l n="453">Orbe resurgebant lunaria cornua nono,</l>
+                        <l n="454">cum dea venatu, fraternis languida flammis,</l>
+                        <l n="455">nacta nemus gelidum, de quo cum murmure labens</l>
+                        <l n="456">ibat et attritas versabat rivus harenas.</l>
+                        <l n="457">Ut loca laudavit, summas pede contigit undas:</l>
+                        <l n="458">his quoque laudatis</l>
+                    </sp>
+                    <sp who="Diana" ana="pers">
+                        <l n="458">«procul est»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="458">ait</l>
+                    </sp>
+                    <sp who="Diana" ana="pers">
+                        <l n="458">«arbiter omnis;</l>
+                        <l n="459">nuda superfusis tingamus corpora lymphis.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="460">Parrhasis erubuit. Cunctae velamina ponunt:</l>
+                        <l n="461">una moras quaerit. Dubitanti vestis adempta est;</l>
+                        <l n="462">qua posita nudo patuit cum corpore crimen.</l>
+                        <l n="463">Attonitae manibusque uterum celare volenti</l>
+                    </sp>
+                    <sp who="Diana" ana="pers">
+                        <l n="464">«i procul hinc»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="464"> dixit</l>
+                    </sp>
+                    <sp who="Diana" ana="pers">
+                        <l n="464">«nec sacros pollue fontes»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="465">Cynthia; deque suo iussit secedere coetu.</l>
+                        <l n="466">Senserat hoc olim magni matrona Tonantis</l>
+                        <l n="467">distuleratque graves in idonea tempora poenas.</l>
+                        <l n="468">Causa morae nulla est, et iam puer Arcas (id ipsum</l>
+                        <l n="469">indoluit Iuno) fuerat de paelice natus.</l>
+                        <l n="470">Quo simul obvertit saevam cum lumine mentem,</l>
+                    </sp>
+                    <sp who="Iuno" ana="pers">
+                        <l n="471">«scilicet hoc etiam restabat, adultera»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="471">dixit,</l>
+                    </sp>
+                    <sp who="Iuno" ana="pers">
+                        <l n="472">«ut fecunda fores, fieretque iniuria partu</l>
+                        <l n="473">nota, Iovisque mei testatum dedecus esset.</l>
+                        <l n="474">Haud impune feres: adimam tibi nempe figuram,</l>
+                        <l n="475">qua tibi, quaque places nostro, importuna, marito.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="476">Dixit et adversa prensis a fronte capillis</l>
+                        <l n="477">stravit humi pronam. Tendebat bracchia supplex:</l>
+                        <l n="478">bracchia coeperunt nigris horrescere villis</l>
+                        <l n="479">curvarique manus et aduncos crescere in ungues</l>
+                        <l n="480">officioque pedum fungi, laudataque quondam</l>
+                        <l n="481">ora Iovi lato fieri deformia rictu.</l>
+                        <l n="482">Neve preces animos et verba precantia flectant</l>
+                        <l n="483">posse loqui eripitur; vox iracunda minaxque</l>
+                        <l n="484">plenaque terroris rauco de gutture fertur.</l>
+                        <l n="485">Mens antiqua tamen facta quoque mansit in ursa,</l>
+                        <l n="486">adsiduoque suos gemitu testata dolores</l>
+                        <l n="487">qualescumque manus ad caelum et sidera tollit</l>
+                        <l n="488">ingratumque Iovem, nequeat cum dicere, sentit.</l>
+                        <l n="489">A quotiens, sola non ausa quiescere silva,</l>
+                        <l n="490">ante domum quondamque suis erravit in agris!</l>
+                        <l n="491">A quotiens per saxa canum latratibus acta est</l>
+                        <l n="492">venatrixque metu venantum territa fugit!</l>
+                        <l n="493">Saepe feris latuit visis, oblita quid esset,</l>
+                        <l n="494">ursaque conspectos in montibus horruit ursos</l>
+                        <l n="495">pertimuitque lupos, quamvis pater esset in illis.</l>
+                        <l n="496">Ecce, Lycaoniae proles, ignara parentis,</l>
+                        <l n="497">Arcas adest, ter quinque fere natalibus actis:</l>
+                        <l n="498">dumque feras sequitur, dum saltus eligit aptos</l>
+                        <l n="499">nexilibusque plagis silvas Erymanthidas ambit,</l>
+                        <l n="500">incidit in matrem; quae restitit Arcade viso</l>
+                        <l n="501">et cognoscenti similis fuit. Ille refugit</l>
+                        <l n="502">inmotosque oculos in se sine fine tenentem</l>
+                        <l n="503">nescius extimuit propiusque accedere aventi</l>
+                        <l n="504">vulnifico fuerat fixurus pectora telo.</l>
+                        <l n="505">Arcuit omnipotens pariterque ipsosque nefasque</l>
+                        <l n="506">sustulit, et celeri raptos per inania vento</l>
+                        <l n="507">imposuit caelo vicinaque sidera fecit.</l>
+                        <l n="508">Intumuit Iuno, postquam inter sidera paelex</l>
+                        <l n="509">fulsit et ad canam descendit in aequora Tethyn</l>
+                        <l n="510">Oceanumque senem, quorum reverentia movit</l>
+                        <l n="511">saepe deos, causamque viae scitantibus infit:</l>
+                    </sp>
+                    <sp who="Iuno" ana="pers">
+                        <l n="512">«Quaeritis, aetheriis quare regina deorum</l>
+                        <l n="513">sedibus huc adsim? pro me tenet altera caelum.</l>
+                        <l n="514">Mentiar, obscurum nisi nox cum fecerit orbem,</l>
+                        <l n="515">nuper honoratas summo, mea vulnera, caelo</l>
+                        <l n="516">videritis stellas illic, ubi circulus axem</l>
+                        <l n="517">ultimus extremum spatioque brevissimus ambit.</l>
+                        <l n="518">Est vero, cur quis Iunonem laedere nolit</l>
+                        <l n="519">offensamque tremat, quae prosum sola nocendo?</l>
+                        <l n="520">O ego quantum egi! quam vasta potentia nostra est!</l>
+                        <l n="521">Esse hominem vetui: facta est dea. Sic ego poenas</l>
+                        <l n="522">sontibus impono, sic est mea magna potestas.</l>
+                        <l n="523">Vindicet antiquam faciem vultusque ferinos</l>
+                        <l n="524">detrahat, Argolica quod in ante Phoronide fecit.</l>
+                        <l n="525">Cur non et pulsa ducit Iunone meoque</l>
+                        <l n="526">collocat in thalamo socerumque Lycaona sumit?</l>
+                        <l n="527">At vos si laesae tangit contemptus alumnae,</l>
+                        <l n="528">gurgite caeruleo septem prohibete triones</l>
+                        <l n="529">sideraque in caelo, stupri mercede, recepta</l>
+                        <l n="530">pellite, ne puro tingatur in aequore paelex.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <milestone ed="Magnus" n="Corvus. Coronis. Cornix. Ocyroe." unit="tale"/>
+                        <l n="531">Di maris adnuerant: habili Saturnia curru</l>
+                        <l n="532">ingreditur liquidum pavonibus aethera pictis,</l>
+                        <l n="533">tam nuper pictis caeso pavonibus Argo,</l>
+                        <l n="534">quam tu nuper eras, cum candidus ante fuisses,</l>
+                        <l n="535">corve loquax, subito nigrantes versus in alas.</l>
+                        <l n="536">Nam fuit haec quondam niveis argentea pennis</l>
+                        <l n="537">ales ut aequaret totas sine labe columbas</l>
+                        <l n="538">nec servaturis vigili Capitolia voce</l>
+                        <l n="539">cederet anseribus nec amanti flumina cycno.</l>
+                        <l n="540">Lingua fuit damno; lingua faciente loquaci</l>
+                        <l n="541">qui color albus erat, nunc est contrarius albo.</l>
+                        <l n="542">Pulchrior in tota, quam Larisaea Coronis,</l>
+                        <l n="543">non fuit Haemonia: placuit tibi, <persName ref="APO" role="narrative" ana="NA">Delphice</persName>, certe,</l>
+                        <l n="544">dum vel casta fuit vel inobservata. Sed ales</l>
+                        <l n="545">sensit adulterium <persName ref="APO" role="narrative" ana="NA">Phoebeius</persName>, utque latentem</l>
+                        <l n="546">detegeret culpam, non exorabilis index,</l>
+                        <l n="547">ad dominum tendebat iter. Quem garrula motis</l>
+                        <l n="548">consequitur pennis, scitetur ut omnia, cornix,</l>
+                        <l n="549">auditaque viae causa</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="549">«non utile carpis»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="550">inquit</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="550">«iter: ne sperne meae praesagia linguae.</l>
+                        <l n="551">Quid fuerim quid simque vide, meritumque require:</l>
+                        <l n="552">invenies nocuisse fidem.</l>
+                    </sp>
+                    <sp who="Cornix" ana="narr">
+                        <l n="552">Nam tempore quodam</l>
+                        <l n="553"><persName ref="MIN" role="narrative" ana="NA">Pallas</persName> Erichthonium, prolem sine matre creatam,</l>
+                        <l n="554">clauserat Actaeo texta de vimine cista</l>
+                        <l n="555">virginibusque tribus gemino de Cecrope natis</l>
+                        <l n="556">et legem dederat, sua ne secreta viderent.</l>
+                        <l n="557">Abdita fronde levi densa speculabar ab ulmo,</l>
+                        <l n="558">quid facerent. Commissa duae sine fraude tuentur,</l>
+                        <l n="559">Pandrosos atque Herse; timidas vocat una sorores</l>
+                        <l n="560">Aglauros nodosque manu diducit, et intus</l>
+                        <l n="561">infantemque vident adporrectumque draconem.</l>
+                        <l n="562">Acta deae refero. Pro quo mihi gratia talis</l>
+                        <l n="563">redditur, ut dicar tutela pulsa <persName ref="MIN" role="narrative" ana="NA">Minervae</persName></l>
+                        <l n="564">et ponar post noctis avem. Mea poena volucres</l>
+                        <l n="565">admonuisse potest ne voce pericula quaerant.</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="566">At, puto, non ultro nec quicquam tale rogantem</l>
+                        <l n="567">me petiit? ipsa licet hoc a <persName ref="MIN" role="narrative" ana="NA">Pallade</persName> quaeras:</l>
+                        <l n="568">quamvis irata est, non hoc irata negabit.</l>
+                    </sp>
+                    <sp who="Cornix" ana="narr">
+                        <l n="569">Nam me Phocaica clarus tellure Coroneus</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="570">(nota loquor)</l>
+                    </sp>
+                    <sp who="Cornix" ana="narr">
+                        <l n="570">genuit fueramque ego regia virgo</l>
+                        <l n="571">divitibusque procis</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="571">(ne me contemne)</l>
+                    </sp>
+                    <sp who="Cornix" ana="narr">
+                        <l n="571">petebar.</l>
+                        <l n="572">Forma mihi nocuit. Nam cum per litora lentis</l>
+                        <l n="573">passibus, ut soleo, summa spatiarer harena,</l>
+                        <l n="574">vidit et incaluit pelagi deus; utque precando</l>
+                        <l n="575">tempora cum blandis absumpsit inania verbis,</l>
+                        <l n="576">vim parat et sequitur. Fugio densumque relinquo</l>
+                        <l n="577">litus et in molli nequiquam lassor harena.</l>
+                        <l n="578">Inde deos hominesque voco; nec contigit ullum</l>
+                        <l n="579">vox mea mortalem: mota est pro virgine <persName ref="MIN" role="metamorphosis" ana="act">virgo</persName></l>
+                        <l n="580">auxiliumque tulit. Tendebam bracchia caelo:</l>
+                        <l n="581">bracchia coeperunt levibus nigrescere pennis.</l>
+                        <l n="582">Reicere ex umeris vestem molibar: at illa</l>
+                        <l n="583">pluma erat inque cutem radices egerat imas.</l>
+                        <l n="584">Plangere nuda meis conabar pectora palmis:</l>
+                        <l n="585">sed neque iam palmas nec pectora nuda gerebam.</l>
+                        <l n="586">Currebam: nec, ut ante, pedes retinebat harena,</l>
+                        <l n="587">sed summa tollebar humo. Mox alta per auras</l>
+                        <l n="588">evehor et data sum comes inculpata <persName ref="MIN" role="metamorphosis" ana="act">Minervae</persName>.</l>
+                    </sp>
+                    <sp who="Cornix" ana="pers">
+                        <l n="589">Quid tamen hoc prodest, si diro facta volucris</l>
+                        <l n="590">crimine Nyctimene nostro successit honori?</l>
+                    </sp>
+                    <sp who="Cornix" ana="narr">
+                        <l n="591">An quae per totam res est notissima Lesbon,</l>
+                        <l n="592">non audita tibi est, patrium temerasse cubile</l>
+                        <l n="593">Nyctimenen? avis illa quidem, sed conscia culpae</l>
+                        <l n="594">conspectum lucemque fugit tenebrisque pudorem</l>
+                        <l n="595">celat et a cunctis expellitur aethere toto.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="596">Talia dicenti</l>
+                    </sp>
+                    <sp who="Coruus" ana="pers">
+                        <l n="596">«tibi»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="596">ait</l>
+                    </sp>
+                    <sp who="Coruus" ana="pers">
+                        <l n="596">«revocamina»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="596">corvus</l>
+                    </sp>
+                    <sp who="Coruus" ana="pers">
+                        <l n="597">«sint precor ista malo: nos vanum spernimus omen.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="598">Nec coeptum dimittit iter, dominoque iacentem</l>
+                        <l n="599">cum iuvene Haemonio vidisse Coronida narrat.</l>
+                        <l n="600">Laurea delapsa est audito crimine amanti,</l>
+                        <l n="601">et pariter vultusque <persName ref="APO" role="narrative" ana="NA">deo</persName> plectrumque colorque</l>
+                        <l n="602">excidit. Utque animus tumida fervebat ab ira,</l>
+                        <l n="603">arma adsueta rapit flexumque a cornibus arcum</l>
+                        <l n="604">tendit et illa suo totiens cum pectore iuncta</l>
+                        <l n="605">indevitato traiecit pectora telo.</l>
+                        <l n="606">Icta dedit gemitum, tractoque a corpore ferro</l>
+                        <l n="607">candida puniceo perfudit membra cruore,</l>
+                        <l n="608">et dixit:</l>
+                    </sp>
+                    <sp who="Coronis" ana="pers">
+                        <l n="608">«Potui poenas tibi, <persName ref="APO" role="narrative" ana="NA">Phoebe</persName>, dedisse,</l>
+                        <l n="609">sed peperisse prius: duo nunc moriemur in una.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="610">Hactenus, et pariter vitam cum sanguine fudit.</l>
+                        <l n="611">Corpus inane animae frigus letale secutum est.</l>
+                        <l n="612">Paenitet heu sero poenae crudelis <persName ref="APO" role="narrative" ana="NA">amantem</persName>,</l>
+                        <l n="613">seque, quod audierit, quod sic exarserit, odit;</l>
+                        <l n="614">odit avem, per quam crimen causamque dolendi</l>
+                        <l n="615">scire coactus erat, nec non arcumque manumque</l>
+                        <l n="616">odit, cumque manu temeraria tela sagittas</l>
+                        <l n="617">conlapsamque fovet seraque ope vincere fata</l>
+                        <l n="618">nititur et medicas exercet inaniter artes.</l>
+                        <l n="619">Quae postquam frustra temptata, rogumque parari</l>
+                        <l n="620">vidit et arsuros supremis ignibus artus,</l>
+                        <l n="621">tum vero gemitus (neque enim caelestia tingi</l>
+                        <l n="622">ora licet lacrimis) alto de corde petitos</l>
+                        <l n="623">edidit, haud aliter quam cum spectante iuvenca</l>
+                        <l n="624">lactentis vituli, dextra libratus ab aure</l>
+                        <l n="625">tempora discussit claro cava malleus ictu.</l>
+                        <l n="626">Ut tamen ingratos in pectora fudit odores</l>
+                        <l n="627">et dedit amplexus iniustaque iusta peregit,</l>
+                        <l n="628">non tulit in cineres labi sua <persName ref="APO" role="narrative" ana="NA">Phoebus</persName> eosdem</l>
+                        <l n="629">semina, sed natum flammis uteroque parentis</l>
+                        <l n="630">eripuit geminique tulit Chironis in antrum;</l>
+                        <l n="631">sperantemque sibi non falsae praemia linguae</l>
+                        <l n="632">inter aves albas vetuit consistere corvum.</l>
+                        <milestone ed="More" n="OCYROE AND AECULAPIUS" unit="tale"/>
+                        <l n="633">Semifer interea divinae stirpis alumno</l>
+                        <l n="634">laetus erat mixtoque oneri gaudebat honore.</l>
+                        <l n="635">Ecce venit rutilis umeros protecta capillis</l>
+                        <l n="636">filia Centauri, quam quondam nympha Chariclo</l>
+                        <l n="637">fluminis in rapidi ripis enixa vocavit</l>
+                        <l n="638">Ocyroen. Non haec artes contenta paternas</l>
+                        <l n="639">edidicisse fuit: fatorum arcana canebat.</l>
+                        <l n="640">Ergo ubi vaticinos concepit mente furores</l>
+                        <l n="641">incaluitque deo, quem clausum pectore habebat,</l>
+                        <l n="642">adspicit infantem</l>
+                    </sp>
+                    <sp who="Ocyrhoe" ana="pers">
+                        <l n="642">«toto»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="642">que</l>
+                    </sp>
+                    <sp who="Ocyrhoe" ana="pers">
+                        <l n="642">«salutifer orbi</l>
+                        <l n="643">cresce puer»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="643">dixit:</l>
+                    </sp>
+                    <sp who="Ocyrhoe" ana="pers">
+                        <l n="643">«tibi se mortalia saepe</l>
+                        <l n="644">corpora debebunt; animas tibi reddere ademptas</l>
+                        <l n="645">fas erit; idque semel dis indignantibus ausus</l>
+                        <l n="646">posse dare hoc iterum flamma prohibebere avita</l>
+                        <l n="647">eque deo corpus fies exsangue, deusque,</l>
+                        <l n="648">qui modo corpus eras, et bis tua fata novabis.</l>
+                        <l n="649">Tu quoque, care pater, nunc inmortalis et aevis</l>
+                        <l n="650">omnibus ut maneas nascendi lege creatus,</l>
+                        <l n="651">posse mori cupies, tum cum cruciabere dirae</l>
+                        <l n="652">sanguine serpentis per saucia membra recepto;</l>
+                        <l n="653">teque ex aeterno patientem numina mortis</l>
+                        <l n="654">efficient, triplicesque deae tua fila resolvent.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="655">Restabat fatis aliquid. Suspirat ab imis</l>
+                        <l n="656">pectoribus, lacrimaeque genis labuntur obortae,</l>
+                        <l n="657">atque ita</l>
+                    </sp>
+                    <sp who="Ocyrhoe" ana="pers">
+                        <l n="657">«praevertunt»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="657">inquit</l>
+                    </sp>
+                    <sp who="Ocyrhoe" ana="pers">
+                        <l n="657">«me fata, vetorque</l>
+                        <l n="658">plura loqui, vocisque meae praecluditur usus.</l>
+                        <l n="659">Non fuerant artes tanti, quae numinis iram</l>
+                        <l n="660">contraxere mihi; mallem nescisse futura.</l>
+                        <l n="661">Iam mihi subduci facies humana videtur,</l>
+                        <l n="662">iam cibus herba placet, iam latis currere campis</l>
+                        <l n="663">impetus est: in equam cognataque corpora vertor.</l>
+                        <l n="664">Tota tamen quare? pater est mihi nempe biformis.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="665">Talia dicenti pars est extrema querellae</l>
+                        <l n="666">intellecta parum, confusaque verba fuerunt.</l>
+                        <l n="667">Mox nec verba quidem nec equae sonus ille videtur,</l>
+                        <l n="668">sed simulantis equam, parvoque in tempore certos</l>
+                        <l n="669">edidit hinnitus et bracchia movit in herbas.</l>
+                        <l n="670">Tum digiti coeunt et quinos adligat ungues</l>
+                        <l n="671">perpetuo cornu levis ungula, crescit et oris</l>
+                        <l n="672">et colli spatium, longae pars maxima pallae</l>
+                        <l n="673">cauda fit, utque vagi crines per colla iacebant,</l>
+                        <l n="674">in dextras abiere iubas: pariterque novata est</l>
+                        <l n="675">et vox et facies nomen quoque monstra dedere.</l>
+                        <milestone ed="Magnus" n="Battus." unit="tale"/>
+                        <l n="676">Flebat opemque tuam frustra Philyreius heros,</l>
+                        <l n="677"><persName ref="APO" role="narrative" ana="NA">Delphice</persName>, poscebat. Nam nec rescindere magni</l>
+                        <l n="678">iussa Iovis poteras, nec, si rescindere posses,</l>
+                        <l n="679">tunc aderas: Elin Messeniaque arva colebas.</l>
+                        <milestone ed="More" n="BATTUS AND MERCURY" unit="tale"/>
+                        <l n="680">Illud erat tempus, quo te pastoria pellis</l>
+                        <l n="681">texit onusque fuit baculum silvestre sinistrae,</l>
+                        <l n="682">alterius dispar septenis fistula cannis.</l>
+                        <l n="683">Dumque amor est curae, dum te tua fistula mulcet,</l>
+                        <l n="684">incustoditae Pylios memorantur in agros</l>
+                        <l n="685">processisse boves. Videt has Atlantide Maia</l>
+                        <l n="686">natus et arte sua silvis occultat abactas.</l>
+                        <l n="687">Senserat hoc furtum nemo nisi notus in illo</l>
+                        <l n="688">rure senex; Battum vicinia tota vocabant.</l>
+                        <l n="689">Divitis hic saltus herbosaque pascua Nelei</l>
+                        <l n="690">nobiliumque greges custos servabat equarum.</l>
+                        <l n="691">Hunc timuit blandaque manu seduxit et illi</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="692">«quisquis es, hospes»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="692">ait,</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="692">«si forte armenta requiret</l>
+                        <l n="693">haec aliquis, vidisse nega; neu gratia facto</l>
+                        <l n="694">nulla rependatur, nitidam cape praemia vaccam»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="695">et dedit. Accepta voces has reddidit hospes:</l>
+                    </sp>
+                    <sp who="Battus" ana="pers">
+                        <l n="696">«Tutus eas: lapis iste prius tua furta loquetur»,</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="697">et lapidem ostendit. Simulat Iove natus abire,</l>
+                        <l n="698">mox redit, et versa pariter cum voce figura</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="699">«rustice, vidisti siquas hoc limite»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="699">dixit</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="700">«ire boves, fer opem furtoque silentia deme:</l>
+                        <l n="701">iuncta suo pariter dabitur ubi femina tauro.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="702">At senior, postquam est merces geminata,</l>
+                    </sp>
+                    <sp who="Battus" ana="pers">
+                        <l n="702">«sub illis</l>
+                        <l n="703">montibus»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="703">inquit</l>
+                    </sp>
+                    <sp who="Battus" ana="pers">
+                        <l n="703">«erunt</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="703">et erant sub montibus illis.</l>
+                        <l n="704">Risit Atlantiades et</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="704">«me mihi, perfide, prodis?</l>
+                        <l n="705">me mihi prodis?»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="705">ait, periuraque pectora vertit</l>
+                        <l n="706">in durum silicem, qui nunc quoque dicitur index,</l>
+                        <l n="707">inque nihil merito vetus est infamia saxo.</l>
+                        <milestone ed="Magnus" n="Aglauros. Invidia." unit="tale"/>
+                        <l n="708">Hinc se sustulerat paribus caducifer alis,</l>
+                        <l n="709">Munychiosque volans agros gratamque <persName ref="MIN" role="narrative" ana="NA">Minervae</persName></l>
+                        <l n="710">despectabat humum cultique arbusta Lycei.</l>
+                        <l n="711">Illa forte die castae de more puellae</l>
+                        <l n="712">vertice supposito festas in <persName ref="MIN" role="narrative" ana="NA">Palladis</persName> arces</l>
+                        <l n="713">pura coronatis portabant sacra canistris.</l>
+                        <l n="714">Inde revertentes deus adspicit ales iterque</l>
+                        <l n="715">non agit in rectum, sed in orbem curvat eundem.</l>
+                        <l n="716">Ut volucris visis rapidissima miluus extis,</l>
+                        <l n="717">dum timet et densi circumstant sacra ministri,</l>
+                        <l n="718">flectitur in gyrum nec longius audet abire</l>
+                        <l n="719">spemque suam motis avidus circumvolat alis,</l>
+                        <l n="720">sic super Actaeas agilis Cyllenius arces</l>
+                        <l n="721">inclinat cursus et easdem circinat auras.</l>
+                        <l n="722">Quanto splendidior quam cetera sidera fulget</l>
+                        <l n="723">Lucifer, et quanto quam Lucifer aurea Phoebe,</l>
+                        <l n="724">tanto virginibus praestantior omnibus Herse</l>
+                        <l n="725">ibat, eratque decus pompae comitumque suarum.</l>
+                        <l n="726">Obstipuit forma Iove natus, et aethere pendens</l>
+                        <l n="727">non secus exarsit, quam cum Balearica plumbum</l>
+                        <l n="728">funda iacit: volat illud et incandescit eundo</l>
+                        <l n="729">et quos non habuit, sub nubibus invenit ignes.</l>
+                        <l n="730">Vertit iter caeloque petit terrena relicto</l>
+                        <l n="731">nec se dissimulat: tanta est fiducia formae.</l>
+                        <l n="732">Quae quamquam iusta est, cura tamen adiuvat illam</l>
+                        <l n="733">permulcetque comas chlamydemque, ut pendeat apte,</l>
+                        <l n="734">collocat, ut limbus totumque appareat aurum,</l>
+                        <l n="735">ut teres in dextra, qua somnos ducit et arcet,</l>
+                        <l n="736">virga sit, ut tersis niteant talaria plantis.</l>
+                        <l n="737">Pars secreta domus ebore et testudine cultos</l>
+                        <l n="738">tres habuit thalamos: quorum tu, Pandrose, dextrum,</l>
+                        <l n="739">Aglauros laevum, medium possederat Herse.</l>
+                        <l n="740">Quae tenuit laevum, venientem prima notavit</l>
+                        <l n="741">Mercurium nomenque dei scitarier ausa est</l>
+                        <l n="742">et causam adventus. Cui sic respondit:</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="742">«Atlantis</l>
+                        <l n="743">Pleionesque nepos ego sum, qui iussa per auras</l>
+                        <l n="744">verba patris porto: pater est mihi Iuppiter ipse.</l>
+                        <l n="745">Nec fingam causas; tu tantum fida sorori</l>
+                        <l n="746">esse velis prolisque meae matertera dici.</l>
+                        <l n="747">Herse causa viae. Faveas oramus amanti.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="748">Adspicit hunc oculis isdem, quibus abdita nuper</l>
+                        <l n="749">viderat Aglauros flavae secreta <persName ref="MIN" role="narrative" ana="NA">Minervae</persName>,</l>
+                        <l n="750">proque ministerio magni sibi ponderis aurum</l>
+                        <l n="751">postulat: interea tectis excedere cogit.</l>
+                        <l n="752">Vertit ad hanc torvi <persName ref="MIN" role="narrative" ana="NA">dea bellica</persName> luminis orbem</l>
+                        <l n="753">et tanto penitus traxit suspiria motu,</l>
+                        <l n="754">ut pariter pectus positamque in pectore forti</l>
+                        <l n="755">aegida concuteret. Subit, hanc arcana profana</l>
+                        <l n="756">detexisse manu tum cum sine matre creatam</l>
+                        <l n="757">Lemnicolae stirpem contra data foedera vidit,</l>
+                        <l n="758">et gratamque deo fore iam gratamque sorori</l>
+                        <l n="759">et ditem sumpto, quod avara poposcerat, auro.</l>
+                        <l n="760">Protinus Invidiae nigro squalentia tabo</l>
+                        <l n="761">tecta petit. Domus est imis in vallibus huius</l>
+                        <l n="762">abdita, sole carens, non ulli pervia vento,</l>
+                        <l n="763">tristis et ignavi plenissima frigoris, et quae</l>
+                        <l n="764">igne vacet semper, caligine semper abundet.</l>
+                        <l n="765">Huc ubi pervenit <persName ref="MIN" role="narrative" ana="NA">belli metuenda virago</persName>,</l>
+                        <l n="766">constitit ante domum (neque enim succedere tectis</l>
+                        <l n="767">fas habet) et postes extrema cuspide pulsat.</l>
+                        <l n="768">Concussae patuere fores. Videt intus edentem</l>
+                        <l n="769">vipereas carnes, vitiorum alimenta suorum,</l>
+                        <l n="770">Invidiam, visaque oculos avertit. At illa</l>
+                        <l n="771">surgit humo pigre semesarumque relinquit</l>
+                        <l n="772">corpora serpentum passuque incedit inerti;</l>
+                        <l n="773">utque <persName ref="MIN" role="narrative" ana="NA">deam</persName> vidit formaque armisque decoram,</l>
+                        <l n="774">ingemuit vultumque ima ad suspiria duxit.</l>
+                        <l n="775">Pallor in ore sedet, macies in corpore toto,</l>
+                        <l n="776">nusquam recta acies, livent rubigine dentes,</l>
+                        <l n="777">pectora felle virent, lingua est suffusa veneno.</l>
+                        <l n="778">Risus abest, nisi quem visi movere dolores.</l>
+                        <l n="779">Nec fruitur somno, vigilacibus excita curis,</l>
+                        <l n="780">sed videt ingratos intabescitque videndo</l>
+                        <l n="781">successus hominum, carpitque et carpitur una,</l>
+                        <l n="782">suppliciumque suum est. Quamvis tamen oderat illam,</l>
+                        <l n="783">talibus adfata est breviter <persName ref="MIN" role="narrative" ana="act">Tritonia</persName> dictis:</l>
+                    </sp>
+                    <sp who="Minerva" ana="pers" corresp="MIN">
+                        <l n="784">«Infice tabe tua natarum Cecropis unam.</l>
+                        <l n="785">Sic opus est. Aglauros ea est.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="785"> Haud plura locuta</l>
+                        <l n="786">fugit et impressa tellurem reppulit hasta.</l>
+                        <l n="787">Illa deam obliquo fugientem lumine cernens</l>
+                        <l n="788">murmura parva dedit, successurumque <persName ref="MIN" role="narrative" ana="NA">Minervae</persName></l>
+                        <l n="789">indoluit, baculumque capit, quod spinea totum</l>
+                        <l n="790">vincula cingebant, adopertaque nubibus atris,</l>
+                        <l n="791">quacumque ingreditur, florentia proterit arva</l>
+                        <l n="792">exuritque herbas et summa cacumina carpit,</l>
+                        <l n="793">adflatuque suo populos urbesque domosque</l>
+                        <l n="794">polluit. Et tandem <persName ref="MIN" role="narrative" ana="NA">Tritonida</persName> conspicit arcem</l>
+                        <l n="795">ingeniis opibusque et festa pace virentem,</l>
+                        <l n="796">vixque tenet lacrimas, quia nil lacrimabile cernit.</l>
+                        <l n="797">Sed postquam thalamos intravit Cecrope natae,</l>
+                        <l n="798">iussa facit pectusque manu ferrugine tincta</l>
+                        <l n="799">tangit et hamatis praecordia sentibus implet,</l>
+                        <l n="800">inspiratque nocens virus, piceumque per ossa</l>
+                        <l n="801">dissipat et medio spargit pulmone venenum.</l>
+                        <l n="802">Neve mali causae spatium per latius errent,</l>
+                        <l n="803">germanam ante oculos fortunatumque sororis</l>
+                        <l n="804">coniugium pulchraque deum sub imagine ponit,</l>
+                        <l n="805">cunctaque magna facit. Quibus inritata dolore</l>
+                        <l n="806">Cecropis occulto mordetur et anxia nocte,</l>
+                        <l n="807">anxia luce gemit, lentaque miserrima tabe</l>
+                        <l n="808">liquitur ut glacies incerto saucia sole.</l>
+                        <l n="809">Felicisque bonis non lenius uritur Herses,</l>
+                        <l n="810">quam cum spinosis ignis supponitur herbis,</l>
+                        <l n="811">quae neque dant flammas lenique tepore cremantur.</l>
+                        <l n="812">Saepe mori voluit, ne quicquam tale videret,</l>
+                        <l n="813">saepe velut crimen rigido narrare parenti;</l>
+                        <l n="814">denique in adverso venientem limine sedit</l>
+                        <l n="815">exclusura deum. Cui blandimenta precesque</l>
+                        <l n="816">verbaque iactanti mitissima</l>
+                    </sp>
+                    <sp who="Aglauros" ana="pers">
+                        <l n="816">«desine»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="816">dixit:</l>
+                    </sp>
+                    <sp who="Aglauros" ana="pers">
+                        <l n="817">«hinc ego me non sum nisi te motura repulso.»</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="818">«Stemus»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="818">ait</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="818">«pacto»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="818">velox Cyllenius</l>
+                    </sp>
+                    <sp who="Mercurius" ana="pers">
+                        <l n="818">«isto»:</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="819">caelestique fores virga patefecit. At illi</l>
+                        <l n="820">surgere conanti partes, quascumque sedendo</l>
+                        <l n="821">flectimus, ignava nequeunt gravitate moveri.</l>
+                        <l n="822">Illa quidem pugnat recto se attollere trunco,</l>
+                        <l n="823">sed genuum iunctura riget, frigusque per inguen</l>
+                        <l n="824">labitur, et callent amisso sanguine venae.</l>
+                        <l n="825">Utque malum late solet inmedicabile cancer</l>
+                        <l n="826">serpere et inlaesas vitiatis addere partes,</l>
+                        <l n="827">sic letalis hiems paulatim in pectora venit</l>
+                        <l n="828">vitalesque vias et respiramina clausit.</l>
+                        <l n="829">Nec conata loqui est, nec, si conata fuisset,</l>
+                        <l n="830">vocis habebat iter: saxum iam colla tenebat,</l>
+                        <l n="831">oraque duruerant, signumque exsangue sedebat.</l>
+                        <l n="832">Nec lapis albus erat: sua mens infecerat illam.</l>
+                        <milestone ed="Magnus" n="Europa." unit="tale"/>
+                        <l n="833">Has ubi verborum poenas mentisque profanae</l>
+                        <l n="834">cepit Atlantiades, dictas a <persName ref="MIN" role="narrative" ana="NA">Pallade</persName> terras</l>
+                        <l n="835">linquit et ingreditur iactatis aethera pennis.</l>
+                        <l n="836">Sevocat hunc genitor. Nec causam fassus amoris</l>
+                    </sp>
+                    <sp who="Iuppiter" ana="pers">
+                        <l n="837">«fide minister»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="837">ait</l>
+                    </sp>
+                    <sp who="Iuppiter" ana="pers">
+                        <l n="837">«iussorum, nate, meorum,</l>
+                        <l n="838">pelle moram solitoque celer delabere cursu,</l>
+                        <l n="839">quaeque tuam matrem tellus a parte sinistra</l>
+                        <l n="840">suspicit (indigenae Sidonida nomine dicunt),</l>
+                        <l n="841">hanc pete, quodque procul montano gramine pasci</l>
+                        <l n="842">armentum regale vides, ad litora verte.»</l>
+                    </sp>
+                    <sp who="Ovid" ana="narr">
+                        <l n="843">Dixit, et expulsi iamdudum monte iuvenci</l>
+                        <l n="844">litora iussa petunt, ubi magni filia regis</l>
+                        <l n="845">ludere virginibus Tyriis comitata solebat.</l>
+                        <l n="846">Non bene conveniunt nec in una sede morantur</l>
+                        <milestone ed="More" n="EUROPA AND JUPITER" unit="tale"/>
+                        <l n="847">maiestas et amor: sceptri gravitate relicta</l>
+                        <l n="848">ille pater rectorque deum, cui dextra trisulcis</l>
+                        <l n="849">ignibus armata est, qui nutu concutit orbem,</l>
+                        <l n="850">induitur faciem tauri mixtusque iuvencis</l>
+                        <l n="851">mugit et in teneris formosus obambulat herbis.</l>
+                        <l n="852">Quippe color nivis est, quam nec vestigia duri</l>
+                        <l n="853">calcavere pedis nec solvit aquaticus auster.</l>
+                        <l n="854">Colla toris exstant, armis palearia pendent,</l>
+                        <l n="855">cornua parva quidem, sed quae contendere possis</l>
+                        <l n="856">facta manu, puraque magis perlucida gemma.</l>
+                        <l n="857">Nullae in fronte minae, nec formidabile lumen;</l>
+                        <l n="858">pacem vultus habet. Miratur Agenore nata,</l>
+                        <l n="859">quod tam formosus, quod proelia nulla minetur.</l>
+                        <l n="860">Sed quamvis mitem metuit contingere primo:</l>
+                        <l n="861">mox adit et flores ad candida porrigit ora.</l>
+                        <l n="862">Gaudet amans et, dum veniat sperata voluptas,</l>
+                        <l n="863">oscula dat manibus; vix iam, vix cetera differt.</l>
+                        <l n="864">Et nunc adludit viridique exsultat in herba,</l>
+                        <l n="865">nunc latus in fulvis niveum deponit harenis;</l>
+                        <l n="866">paulatimque metu dempto modo pectora praebet</l>
+                        <l n="867">virginea plaudenda manu, modo cornua sertis</l>
+                        <l n="868">impedienda novis. Ausa est quoque regia virgo</l>
+                        <l n="869">nescia quem premeret, tergo considere tauri,</l>
+                        <l n="870">cum deus a terra siccoque a litore sensim</l>
+                        <l n="871">falsa pedum primis vestigia ponit in undis:</l>
+                        <l n="872">inde abit ulterius mediique per aequora ponti</l>
+                        <l n="873">fert praedam. Pavet haec litusque ablata relictum</l>
+                        <l n="874">respicit, et dextra cornum tenet, altera dorso</l>
+                        <l n="875">imposita est; tremulae sinuantur flamine vestes.</l>
+                    </sp>
+                </div>
+            </div>
+        </body>
+    </text>
+</TEI>

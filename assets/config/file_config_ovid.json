@@ -1,5 +1,5 @@
 {
-  "editionUrls": ["assets/data/deities_pallas_phebus.xml"],
+  "editionUrls": ["assets/data/metamorphosis_II_test_evt.xml"],
   "editionImagesSource": {
     "manifest": {
       "value": "https://www.e-codices.unifr.ch/metadata/iiif/csg-0730/manifest.json",

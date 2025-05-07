@@ -26,21 +26,21 @@
       "iconSet": "evt",
       "id": "imageText",
       "label": "Image Text",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "txtTxt",
       "iconSet": "evt",
       "id": "textText",
       "label": "Text Text",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "collation",
       "iconSet": "evt",
       "id": "collation",
       "label": "Collation",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "srcTxt",
@@ -54,7 +54,7 @@
       "iconSet": "evt",
       "id": "textVersions",
       "label": "Text Versions",
-      "enable": true
+      "enable": false
     },
     {
       "icon": "documix",
@@ -83,15 +83,15 @@
       "enable": false
     }
   ],
-  "enableNavBar": true,
+  "enableNavBar": false,
   "initNavBarOpened": false,
-  "thumbnailsButton": true,
+  "thumbnailsButton": false,
   "viscollButton": false,
-  "mainFontFamily": "'Libertinus Serif', Junicode, Times, serif",
+  "mainFontFamily": "Palatino, 'Libertinus Serif', Times, serif",
   "mainFontSize": "1.1rem",
-  "secondaryfontFamily": "Arial, sans-serif",
+  "secondaryfontFamily": "Junicode, sans-serif",
   "secondaryfontSize": "1.1em",
-  "theme": "modern",
+  "theme": "classic",
   "syncZonesHighlightButton": true,
   "defaultBibliographicStyle": "chicago",
   "allowedBibliographicStyles": {
@@ -162,5 +162,6 @@
         "emphasized": ["publication"]
       }
     }
-  }
+  },
+  "visibleElements": ["milestone"]
 }

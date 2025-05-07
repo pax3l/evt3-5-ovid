@@ -26,22 +26,22 @@
   },
   "availableEditionLevels": [
     {
+      "id": "diplomatic",
+      "label": "diplomatic",
+      "enable": true,
+      "hidden": false
+    },
+    {
       "id": "interpretative",
       "label": "Livres",
       "enable": true,
       "hidden": false
     },
     {
-      "id": "lecture-?",
-      "label": "",
-      "enable": false,
-      "hidden": false
-    },
-    {
       "id": "critical",
       "label": "critical",
-      "enable": false,
-      "hidden": true
+      "enable": true,
+      "hidden": false
     },
     {
       "id": "changesView",

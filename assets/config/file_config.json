@@ -1,5 +1,6 @@
 {
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "editionUrls": ["assets/data/metamorphosis_II_test_evt.xml"],
     "editionImagesSource": {
         "manifest": {
@@ -11,11 +12,16 @@
             "enable": true
         }
 =======
+=======
+>>>>>>> Stashed changes
   "editionUrls": ["assets/data/deities_pallas_phebus_test.xml"],
   "editionImagesSource": {
     "manifest": {
       "value": "https://www.e-codices.unifr.ch/metadata/iiif/csg-0730/manifest.json",
       "enable": false
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     },
     "graphics": {

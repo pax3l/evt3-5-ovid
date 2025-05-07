@@ -2,12 +2,15 @@
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <?xml version="1.0" encoding="UTF-8"?><?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_corpus.rng" 
 schematypens="http://relaxng.org/ns/structure/1.0"?><?xml-model href="https://tei-c.org/release/xml/tei/custom/schema/relaxng/tei_corpus.rng" 
 schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -22,6 +25,9 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -100,7 +106,13 @@ schematypens="http://purl.oclc.org/dsdl/schematron"?>
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			<change who="apenture" when="2024-08-12"> Added the element persName to encode the presence of deities in Book I to XV.</change>
+=======
+			<change who="apenture" when="2024-08-12"> Added the element deityRole to encode the
+				presence of deities in Book I to XV. Attributes descripted in the ODD document
+				mentionned in TEI element.</change>
+>>>>>>> Stashed changes
 =======
 			<change who="apenture" when="2024-08-12"> Added the element deityRole to encode the
 				presence of deities in Book I to XV. Attributes descripted in the ODD document
